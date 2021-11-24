@@ -1,0 +1,15 @@
+{% extends 'blog/base.htm' %}
+
+{% block content %}
+    {% for post in posts %}
+    <div class="card mt-5" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{post.date_added}}</h6>
+          <p class="card-text">{{post.intro}}</p>
+          <a href="{% url 'post' post.slug %}" class="card-link">View Post</a>
+        </div>
+      </div>
+
+    {% endfor %}
+{% endblock %}
